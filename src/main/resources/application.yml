@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: KeySpaceWeb
+  # mysql配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/keyspace_2
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # mail配置
+  mail:
+    username: keyspace_gz@163.com
+    password: KXLWHDEJFIMVFVAQ
+    host: smtp.163.com
+    port: 465
+    default-encoding: UTF-8
+    protocol: smtps
+    properties:
+      mail:
+        smtp:
+          socketFactoryClass: javax.net.ssl.SSLSocketFactory
+          #表示开启 DEBUG 模式，这样，邮件发送过程的日志会在控制台打印出来，方便排查错误
+          debug: true
+          ssl: true
+
+# 端口号配置
+server:
+  port: 8888
+mybatis-plus:
+  configuration:
+    # 关闭驼峰转换
+    map-underscore-to-camel-case: false
