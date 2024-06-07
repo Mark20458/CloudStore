@@ -1,5 +1,7 @@
 ### 该项目是[KeySpace](https://github.com/Mark20458/KeySpace)的后端
 
+可以通过ngrok工具，将CloudStore项目代理到公网上，然后设置KeySpace下Api类BASE_URL变量为自己的基地址
+
 | 接口                   | 类型   | 含义          |
 |----------------------|------|-------------|
 | /login               | POST | 登录          |
