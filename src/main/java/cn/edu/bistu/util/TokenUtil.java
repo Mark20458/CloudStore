@@ -1,4 +1,4 @@
-package cn.edu.bistu.cloudstore.util;
+package cn.edu.bistu.util;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTCreator;

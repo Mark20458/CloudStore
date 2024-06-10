@@ -1,4 +1,4 @@
-package cn.edu.bistu.cloudstore.model;
+package cn.edu.bistu.model;
 
 
 import com.baomidou.mybatisplus.annotation.IdType;

@@ -1,12 +1,12 @@
-package cn.edu.bistu.cloudstore.controller;
+package cn.edu.bistu.controller;
 
 
-import cn.edu.bistu.cloudstore.common.CODE;
-import cn.edu.bistu.cloudstore.common.Result;
-import cn.edu.bistu.cloudstore.dao.UserDao;
-import cn.edu.bistu.cloudstore.mail.MailMsg;
-import cn.edu.bistu.cloudstore.model.User;
-import cn.edu.bistu.cloudstore.util.TokenUtil;
+import cn.edu.bistu.common.CODE;
+import cn.edu.bistu.common.Result;
+import cn.edu.bistu.dao.UserDao;
+import cn.edu.bistu.mail.MailMsg;
+import cn.edu.bistu.model.User;
+import cn.edu.bistu.util.TokenUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import jakarta.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;

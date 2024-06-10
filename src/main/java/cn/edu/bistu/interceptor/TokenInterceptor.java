@@ -1,6 +1,6 @@
-package cn.edu.bistu.cloudstore.interceptor;
+package cn.edu.bistu.interceptor;
 
-import cn.edu.bistu.cloudstore.util.TokenUtil;
+import cn.edu.bistu.util.TokenUtil;
 import com.auth0.jwt.exceptions.TokenExpiredException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

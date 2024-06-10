@@ -1,4 +1,4 @@
-package cn.edu.bistu.cloudstore.common;
+package cn.edu.bistu.common;
 
 public class CODE {
     public static final int OK = 101;

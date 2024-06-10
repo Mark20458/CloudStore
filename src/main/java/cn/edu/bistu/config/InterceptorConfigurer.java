@@ -1,6 +1,6 @@
-package cn.edu.bistu.cloudstore.config;
+package cn.edu.bistu.config;
 
-import cn.edu.bistu.cloudstore.interceptor.TokenInterceptor;
+import cn.edu.bistu.interceptor.TokenInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

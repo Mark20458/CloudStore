@@ -1,4 +1,4 @@
-package cn.edu.bistu.cloudstore.util;
+package cn.edu.bistu.util;
 
 
 public class CodeGeneratorUtil {

@@ -1,4 +1,4 @@
-package cn.edu.bistu.cloudstore;
+package cn.edu.bistu;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

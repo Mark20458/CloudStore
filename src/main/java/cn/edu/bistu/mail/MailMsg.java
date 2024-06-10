@@ -1,6 +1,6 @@
-package cn.edu.bistu.cloudstore.mail;
+package cn.edu.bistu.mail;
 
-import cn.edu.bistu.cloudstore.util.CodeGeneratorUtil;
+import cn.edu.bistu.util.CodeGeneratorUtil;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
