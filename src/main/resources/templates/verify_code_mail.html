@@ -5,7 +5,8 @@
     <title>邮箱发送</title>
 </head>
 <body>
-<p><span th:text="${email}"></span></p>
-<p th:text="${code}"></p>
+您的验证码是：
+<h3 th:text="${code}"></h3>
+<p>验证码有效时间为： <span th:text="${expiration_time}"></span>分钟 </p>
 </body>
 </html>

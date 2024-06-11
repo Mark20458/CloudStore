@@ -2,6 +2,7 @@ package cn.edu.bistu;
 
 import cn.edu.bistu.dao.BackupDao;
 import cn.edu.bistu.dao.UserDao;
+import cn.edu.bistu.mail.MailMsg;
 import cn.edu.bistu.service.RedisService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ class CloudStoreApplicationTests {
     private BackupDao backupDao;
     @Autowired
     private RedisService redisService;
+    @Autowired
+    private MailMsg mailMsg;
 
     @Test
     void contextLoads() {
@@ -31,5 +34,10 @@ class CloudStoreApplicationTests {
     void RedisService() {
         redisService.set("gongz@qq.com", "aasdjopposd", 200);
         redisService.hSet("gongz", "token", "123456");
+    }
+
+    @Test
+    void testP() {
+        System.out.println(mailMsg.verify("2146160669@qq.com", "970587"));
     }
 }
