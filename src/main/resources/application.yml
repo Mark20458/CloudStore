@@ -3,7 +3,7 @@ spring:
     name: CloudStore
   # mysql配置
   datasource:
-    url: jdbc:mysql://localhost:3306/keyspace_2
+    url: jdbc:mysql://localhost:3306/keyspace
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -39,7 +39,5 @@ spring:
 # 端口号配置
 server:
   port: 8888
-mybatis-plus:
-  configuration:
-    # 关闭驼峰转换
-    map-underscore-to-camel-case: false
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

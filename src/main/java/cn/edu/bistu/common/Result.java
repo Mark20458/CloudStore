@@ -34,10 +34,10 @@ public class Result {
     }
 
     public static Result OK() {
-        return new Result(CODE.OK);
+        return new Result(Code.OK);
     }
 
     public static Result ERR() {
-        return new Result(CODE.ERR);
+        return new Result(Code.ERR);
     }
 }
