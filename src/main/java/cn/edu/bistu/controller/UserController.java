@@ -22,7 +22,6 @@ public class UserController {
     private UserService userService;
     @Autowired
     private RedisService redisService;
-    public static final String TOKEN = "token";
 
     /**
      * @param userInfo 登录信息和设备信息
