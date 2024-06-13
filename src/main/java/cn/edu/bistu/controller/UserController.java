@@ -6,6 +6,7 @@ import cn.edu.bistu.entity.User;
 import cn.edu.bistu.mail.MailMsg;
 import cn.edu.bistu.service.RedisService;
 import cn.edu.bistu.service.UserService;
+import cn.edu.bistu.util.StringUtil;
 import cn.edu.bistu.util.TokenUtil;
 import jakarta.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +24,19 @@ public class UserController {
     private RedisService redisService;
     public static final String TOKEN = "token";
 
+    /**
+     * @param userInfo 登录信息和设备信息
+     * @return 结果（成功返回token）
+     */
     @PostMapping("/login")
-    public Result login(@RequestBody User user) {
-        if (userService.login(user)) {
+    public Result login(@RequestBody UserInfo userInfo) {
+        User user = userInfo.user;
+        String device = userInfo.device;
+        if (userService.login(user) && !StringUtil.isEmpty(device)) {
             HashMap<String, String> map = new HashMap<>();
             map.put("email", user.getEmail());
             String token = TokenUtil.getToken(map);
-            redisService.hSet(user.getEmail(), TOKEN, token);
+            redisService.hSet(user.getEmail(), device, token);
             return Result.OK().message("登录成功").data(token);
         } else {
             return Result.ERR().message("登录失败");
