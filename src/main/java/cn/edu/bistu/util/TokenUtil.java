@@ -16,7 +16,7 @@ public class TokenUtil {
     private static final String SIGNATURE = "GONGZ,YOU ARE SO HANDSOME!";
 
     // 过期时间 10天 10 * 24 * 60 * 60 * 1000
-    private static final long EXPIRATION_TIME = 200;
+    private static final long EXPIRATION_TIME = 10 * 24 * 60 * 60 * 1000;
 
 
     public static String getToken(Map<String, String> map) {

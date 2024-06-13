@@ -1,5 +1,6 @@
 package cn.edu.bistu;
 
+import cn.edu.bistu.entity.User;
 import cn.edu.bistu.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ class CloudStoreApplicationTests {
 
     @Test
     public void testUserMapper() {
-        System.out.println(userMapper.getUserByEmail("2"));
+        System.out.println(userMapper.getUserByEmail("5465464"));
+
     }
 }

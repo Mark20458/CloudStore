@@ -34,6 +34,10 @@ public class MailMsg {
     public static final int EXPIRATION_TIME = 60;
 
     public boolean mail(String email) throws MessagingException {
+        if (redisService.hasKey(email + VERIFY_CODE)) {
+            // redis中已经存在验证码，则应该发送失败
+            return false;
+        }
         MimeMessage message = mailSender.createMimeMessage();
         String code = CodeGeneratorUtil.generatorCode(6);
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -53,9 +57,17 @@ public class MailMsg {
         return true;
     }
 
+    /**
+     * 验证后从Redis中删除验证码
+     *
+     * @param email 发送验证码的邮箱
+     * @param code  验证码
+     * @return 返回验证码是否正确
+     */
     public boolean verify(String email, String code) {
         if (code == null) return false;
         String verify_code = (String) redisService.get(email + VERIFY_CODE);
+        redisService.del(email + VERIFY_CODE);
         return code.equals(verify_code);
     }
 }

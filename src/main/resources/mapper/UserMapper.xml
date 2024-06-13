@@ -13,13 +13,15 @@
     </resultMap>
 
     <sql id="UserColumnList">
-        id,
-        e_mail,
-        hash_login_password,
-        login_password_salt,
-        hash_master_password,
-        master_password_salt,
-        create_time
+        <if test="true">
+            id,
+            e_mail,
+            hash_login_password,
+            login_password_salt,
+            hash_master_password,
+            master_password_salt,
+            create_time
+        </if>
     </sql>
 
     <select id="getUserByEmail" resultMap="User">
@@ -28,4 +30,11 @@
         from user
         where e_mail = #{email};
     </select>
+
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+        insert into user(`e_mail`, `hash_login_password`, `login_password_salt`, `hash_master_password`,
+                         `master_password_salt`)
+        values (#{email}, #{hLoginPassword}, #{loginPasswordSalt},
+                #{hMasterPassword}, #{masterPasswordSalt})
+    </insert>
 </mapper>
