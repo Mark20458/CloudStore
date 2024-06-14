@@ -38,10 +38,10 @@ public class User {
      * @return 用户信息是否合法
      */
     public boolean isValid() {
-        return StringUtil.isEmail(email) && !(StringUtil.isEmpty(hLoginPassword) ||
-                StringUtil.isEmpty(loginPasswordSalt) ||
-                StringUtil.isEmpty(hMasterPassword) ||
-                StringUtil.isEmpty(masterPasswordSalt)
-        );
+        return StringUtil.isEmail(email) &&
+                !StringUtil.isEmpty(hLoginPassword) &&
+                !StringUtil.isEmpty(loginPasswordSalt) &&
+                !StringUtil.isEmpty(hMasterPassword) &&
+                !StringUtil.isEmpty(masterPasswordSalt);
     }
 }

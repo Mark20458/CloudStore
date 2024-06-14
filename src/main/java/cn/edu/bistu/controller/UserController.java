@@ -35,10 +35,29 @@ public class UserController {
             HashMap<String, String> map = new HashMap<>();
             map.put("email", user.getEmail());
             String token = TokenUtil.getToken(map);
-            redisService.hSet(user.getEmail(), device, token);
+            redisService.hSet(user.getEmail(), token, device);
             return Result.OK().message("登录成功").data(token);
         } else {
             return Result.ERR().message("登录失败");
+        }
+    }
+
+    @PostMapping("/register")
+    public Result register(@RequestBody UserInfo userInfo) {
+        User user = userInfo.user;
+        String device = userInfo.device;
+        String code = userInfo.code;
+        System.out.println(user);
+        System.out.println(device);
+        System.out.println(code);
+        if (!StringUtil.isEmpty(device) && !StringUtil.isEmpty(code) && userService.register(user, code)) {
+            HashMap<String, String> map = new HashMap<>();
+            map.put("email", user.getEmail());
+            String token = TokenUtil.getToken(map);
+            redisService.hSet(user.getEmail(), token, device);
+            return Result.OK().message("注册成功").data(token);
+        } else {
+            return Result.ERR().message("注册失败");
         }
     }
 
